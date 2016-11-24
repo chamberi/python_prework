@@ -1,17 +1,24 @@
-# key - animal_name : value - location
-zoo_animals = { 'Unicorn' : 'Cotton Candy House',
-'Sloth' : 'Rainforest Exhibit',
-'Bengal Tiger' : 'Jungle House',
-'Atlantic Puffin' : 'Arctic Exhibit',
-'Rockhopper Penguin' : 'Arctic Exhibit'}
-# A dictionary (or list) declaration may break across multiple lines
+shopping_list = ["banana", "orange", "apple"]
 
-# Removing the 'Unicorn' entry. (Unicorns are incredibly expensive.)
-del zoo_animals['Unicorn']
+stock = {
+    "banana": 6,
+    "apple": 0,
+    "orange": 32,
+    "pear": 15
+}
 
-# Your code here!
-del zoo_animals['Sloth']
-del zoo_animals['Bengal Tiger']
-zoo_animals['Rockhopper Penguin'] = 'Jungle Exhibit'
+prices = {
+    "banana": 4,
+    "apple": 2,
+    "orange": 1.5,
+    "pear": 3
+}
 
-print zoo_animals
+# Write your code below!
+def compute_bill(food):
+    total = 0
+    for item in food:
+        if stock[item] > 0:
+            total += prices[item]
+            stock[item] -= 1
+    return total
